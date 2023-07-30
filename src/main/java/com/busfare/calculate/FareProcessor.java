@@ -111,6 +111,7 @@ public class FareProcessor {
 
 	}
 
+	//Assumption: Method to check if the start DateTime and endDateTime difference is at max 20 mins between the farthest stops
 	private boolean isTimeDifferenceWithinRange (Date startDate, Date endDate) {
 		LocalDateTime initialTime = LocalDateTime.ofInstant(startDate.toInstant(),
 				ZoneId.systemDefault());
