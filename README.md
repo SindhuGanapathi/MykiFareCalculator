@@ -1,11 +1,11 @@
 # MykiFareCalculator - Manage myki travels along with fare information for customer trips
 
-**Project Description:**
+**PROJECT DESCRIPTION:**
 
 Passenger taps the credit card (with associated PAN) while boarding the bus and similarly expected to 
 tap off while alighting. Based on the number of stops traveled by the passenger, bus fare is calculated.
 
-**Bus fares calculation in ideal hop on offs goes as follows:**
+**BUS FARE calculation in ideal hop on offs goes as follows:**
 
 Stop1 to Stop2 or vice versa, travel costs **$3.25**
 
@@ -22,10 +22,21 @@ maximum fare is calculated between the stops and status is considered as **INCOM
 **Example:** Passenger has traveled from Stop1 to Stop2 but has missed to tap off the card at stop2, in which case
           trip is considered 'INCOMPLETE' with a fare of $7.30 (charged for the maximum stops)
 
+**ASSUMPTIONS:**
+
+Stops are at equi-distant, it takes 10 minutes from Stop1 to Stop2 and similarly it takes 10 minutes to reach from Stop2 to Stop3. 
+
+Stop2 being the midpoint of the travel.
+
+**This leads to the assumption that user can reach the farthest stop, Stop1 to Stop3 and vice versa in 20 minutes.**
+
+This business logic has been considered to calculate travel output details. 
+
+Also, the start dateTime and end dateTime of trips in the input CSV file needs to be entered accordingly while testing.
 
 
 
-**Implemetation:**
+**IMPLEMENTATION:**
 **Step1:** Read the CSV file containing the tap on/off information for the customer : 
        "ID", "DateTimeUTC", "TapType",	"StopId", "CompanyId", "BusID", "PAN"
        
