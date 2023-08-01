@@ -1,3 +1,4 @@
+
 package com.busfare.data.io;
 
 import java.io.IOException;
@@ -48,6 +49,7 @@ public class FileReadWrite {
 
 			TapOnOff tapOnOff = new TapOnOff();
 			tapOnOff.setId(row[0]);
+			//tapOnOff.setDateTime(formatDateTime(row[1]));
 			tapOnOff.setDateTime(formatDateTime(row[1]));
 			tapOnOff.setTapType(row[2]);
 			tapOnOff.setStopId(row[3]);
@@ -66,8 +68,7 @@ public class FileReadWrite {
 	 * @return
 	 */
 	private static Date formatDateTime(String date) {
-		//System.out.println("csv file date:: " + date);
-		final SimpleDateFormat dateFormat =  new SimpleDateFormat("dd-mm-YYYY HH:mm");
+		final SimpleDateFormat dateFormat =  new SimpleDateFormat("dd-MM-yyyy HH:mm");
 		Date formattedDate = null;
 		try {
 			formattedDate = dateFormat.parse(date);
